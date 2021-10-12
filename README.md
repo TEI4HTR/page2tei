@@ -1,16 +1,16 @@
 # LECTAUREP - Page2tei 
 
-Ce repository github héberge une feuille de transformation XSL PAGE XML vers TEI, et des exemples de transformations. La feuille XSL a été modifiée d'après une [première version](https://github.com/inoblivionem/xslt-playground/blob/main/xmlpage_to_tei/xmlpage_to_tei.xsl) créée par Manon Ovide ([inoblivionem](https://github.com/inoblivionem/xslt-playground)). Elle transforme un export PAGE XML résultant d'une transcription automatique en un fichier TEI valide.
+Ce repository héberge une feuille de transformation XSL pour passer d'un fichier PAGE XML à un fichier XML-TEI, et des exemples de transformations. La feuille XSL a été modifiée et adaptée d'après une [première version](https://github.com/inoblivionem/xslt-playground/blob/main/xmlpage_to_tei/xmlpage_to_tei.xsl) créée par Manon Ovide ([inoblivionem](https://github.com/inoblivionem/xslt-playground)).
 
 Elle est fondée sur la création dans le TEI d'autant de `<surfaceGrp>` qu'il y a de régions d'annotation, `<TextRegion>` dans le PAGE XML.
 
 ## Organisation du repository
 
-`
+```
 ├── pagexml
 ├── tei
 └── xmlpage_to_tei.xsl
-`
+```
 
 * la feuille XSL
 * Le dossier `pagexml` contient l'export de la transcription automatique d'une page d'un répertoire de notaire, exploitée par le projet LECTAUREP, ainsi que sa numérisation.
