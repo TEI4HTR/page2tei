@@ -20,4 +20,4 @@ For each annotation region, `<TextRegion>` in a PAGE XML file, a node `<surfaceG
 
 ## Cite this repository
 
-`Chagué, A., & Scheithauer, H., Page2tei - Lectaurep, 2021, https://github.com/lectaurep/page2tei.`
+`Chagué, A., & Scheithauer, H. page2tei - LECTAUREP [Computer software]`
