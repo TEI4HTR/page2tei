@@ -1,0 +1,10 @@
+cff-version: 1.1.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Chagué
+    given-names: Alix
+    orcid: https://orcid.org/0000-0002-0136-4434
+  - family-names: Scheithauer
+    given-names: Hugo
+    orcid: https://orcid.org/0000-0002-5659-4675
+title: "page2tei - LECTAUREP"
