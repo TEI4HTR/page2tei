@@ -11,12 +11,17 @@
 
     <xsl:template match="/">
 
-        <xsl:variable name="output">
-            <xsl:value-of
-                select="concat(replace(/pc:PcGts/pc:Page/@imageFilename, '.jpg', ''), '-tei.xml')"/>
+        <!-- On crée une variable pour stocker le nom de la numérisation -->
+        <xsl:variable name="file_name">
+            <xsl:value-of select="replace(/pc:PcGts/pc:Page/@imageFilename, '.jpg', '')"/>
         </xsl:variable>
 
-        <xsl:result-document href="{$output}" exclude-result-prefixes="xi xsi pc">
+        <!-- On crée une variable pour stocker le nom du fichier de sortie -->
+        <xsl:variable name="output_name">
+            <xsl:value-of select="concat($file_name, '-tei.xml')"/>
+        </xsl:variable>
+
+        <xsl:result-document href="{$output_name}" exclude-result-prefixes="xi xsi pc">
             <TEI>
                 <teiHeader>
                     <fileDesc>
@@ -26,9 +31,12 @@
                                     select="substring-before(substring-after(document-uri(), 'xmlpage_to_tei/'), '.xml')"
                                 />
                             </title>
-                            <author>
-                                <xsl:value-of select="pc:PcGts/pc:Metadata/pc:Creator"/>
-                            </author>
+                            <respStmt>
+                                <resp>Transcribed with</resp>
+                                <name>
+                                    <xsl:value-of select="pc:PcGts/pc:Metadata/pc:Creator"/>
+                                </name>
+                            </respStmt>
                         </titleStmt>
                         <publicationStmt>
                             <p/>
@@ -47,12 +55,25 @@
                     </revisionDesc>
                 </teiHeader>
                 <sourceDoc>
+                    <!-- On utilise une balise graphic pour récupérer les attributs de <Page> dans le PAGE XML -->
+                    <graphic>
+                        <xsl:attribute name="url">
+                            <xsl:value-of select="$file_name"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="width">
+                            <xsl:value-of select="concat(//pc:Page/@imageWidth, 'px')"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="height">
+                            <xsl:value-of select="concat(//@imageHeight, 'px')"/>
+                        </xsl:attribute>
+                    </graphic>
                     <xsl:apply-templates select="//pc:Page"/>
                 </sourceDoc>
             </TEI>
         </xsl:result-document>
     </xsl:template>
 
+    <!-- Un noeud TextRegion, dans le PAGE XML, devient un surfaceGrp dans le TEI. -->
     <xsl:template match="//pc:TextRegion">
         <xsl:element name="surfaceGrp">
             <xsl:attribute name="xml:id">
@@ -69,30 +90,23 @@
                 </xsl:choose>
             </xsl:attribute>
             <surface>
-                <xsl:element name="graphic">
-                    <xsl:attribute name="url">
-                        <xsl:value-of select="ancestor::pc:PcGts/pc:Page/@imageFilename"/>
-                    </xsl:attribute>
-                    <xsl:attribute name="width">
-                        <xsl:value-of select="concat(ancestor::pc:PcGts/pc:Page/@imageWidth, 'px')"
-                        />
-                    </xsl:attribute>
-                    <xsl:attribute name="height">
-                        <xsl:value-of select="concat(ancestor::pc:PcGts/pc:Page/@imageHeight, 'px')"
-                        />
-                    </xsl:attribute>
-                </xsl:element>
+                <!-- Pour chaque TextLine dans le Page XML, on crée autant de zone dans le TEI -->
                 <xsl:for-each select="pc:TextLine">
                     <xsl:element name="zone">
                         <xsl:attribute name="xml:id">
                             <xsl:value-of select="@id"/>
                         </xsl:attribute>
+                        <xsl:attribute name="type"><xsl:value-of>mask</xsl:value-of></xsl:attribute>
                         <xsl:attribute name="points">
                             <xsl:value-of select="pc:Coords/@points"/>
                         </xsl:attribute>
-                        <xsl:element name="line">
-                            <xsl:value-of select="pc:TextEquiv/pc:Unicode"/>
-                        </xsl:element>
+                            <xsl:element name="line">
+                                <xsl:attribute name="type"><xsl:value-of>baseline</xsl:value-of></xsl:attribute>
+                                <xsl:attribute name="points">
+                                    <xsl:value-of select="pc:Baseline/@points"/>
+                                </xsl:attribute>
+                                <xsl:value-of select="pc:TextEquiv/pc:Unicode"/>
+                            </xsl:element>
                     </xsl:element>
                 </xsl:for-each>
             </surface>
