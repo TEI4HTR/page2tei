@@ -11,17 +11,18 @@
 
     <xsl:template match="/">
 
-        <!-- On crée une variable pour stocker le nom de la numérisation -->
+        <!-- Creation of a variable for storing file's name -->
         <xsl:variable name="file_name">
             <xsl:value-of select="replace(/pc:PcGts/pc:Page/@imageFilename, '.jpg', '')"/>
         </xsl:variable>
 
-        <!-- On crée une variable pour stocker le nom du fichier de sortie -->
+        <!-- Creation of a variable for storing output file name -->
         <xsl:variable name="output_name">
             <xsl:value-of select="concat($file_name, '-tei.xml')"/>
         </xsl:variable>
 
         <xsl:result-document href="{$output_name}" exclude-result-prefixes="xi xsi pc">
+            <!-- teiHeader elements -->
             <TEI>
                 <teiHeader>
                     <fileDesc>
@@ -55,7 +56,7 @@
                     </revisionDesc>
                 </teiHeader>
                 <sourceDoc>
-                    <!-- On utilise une balise graphic pour récupérer les attributs de <Page> dans le PAGE XML -->
+                    <!-- A <graphic> TEI element is used for tagging attributes of the <Page> node in the PAGE XML -->
                     <graphic>
                         <xsl:attribute name="url">
                             <xsl:value-of select="$file_name"/>
@@ -71,9 +72,9 @@
                 </sourceDoc>
             </TEI>
         </xsl:result-document>
+        
     </xsl:template>
-
-    <!-- Un noeud TextRegion, dans le PAGE XML, devient un surfaceGrp dans le TEI. -->
+    <!-- A <TextRegion> node in the PAGE XML becomes a <surfaceGrp> node in the TEI -->
     <xsl:template match="//pc:TextRegion">
         <xsl:element name="surfaceGrp">
             <xsl:attribute name="xml:id">
@@ -89,9 +90,11 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:attribute>
+            <!-- <surface> in the TEI represents all baselines associated with a <TextRegion> in the PAGE XML -->
             <surface>
-                <!-- Pour chaque TextLine dans le Page XML, on crée autant de zone dans le TEI -->
+                <!-- For each <TextLine> in the PAGE XML, a <zone> element is created in the TEI. -->
                 <xsl:for-each select="pc:TextLine">
+                    <!-- <zone> in the TEI represents baseline's mask in the PAGE XML -->
                     <xsl:element name="zone">
                         <xsl:attribute name="xml:id">
                             <xsl:value-of select="@id"/>
@@ -100,11 +103,15 @@
                         <xsl:attribute name="points">
                             <xsl:value-of select="pc:Coords/@points"/>
                         </xsl:attribute>
+                        <!-- <path> in the TEI represents baseline's coordinates -->
+                        <xsl:element name="path">
+                            <xsl:attribute name="type"><xsl:value-of>baseline</xsl:value-of></xsl:attribute>
+                            <xsl:attribute name="points">
+                                <xsl:value-of select="pc:Baseline/@points"/>
+                            </xsl:attribute>
+                        </xsl:element>
+                        <!-- <line> element in the TEI represents the transcription in the PAGE XML -->
                             <xsl:element name="line">
-                                <xsl:attribute name="type"><xsl:value-of>baseline</xsl:value-of></xsl:attribute>
-                                <xsl:attribute name="points">
-                                    <xsl:value-of select="pc:Baseline/@points"/>
-                                </xsl:attribute>
                                 <xsl:value-of select="pc:TextEquiv/pc:Unicode"/>
                             </xsl:element>
                     </xsl:element>
