@@ -18,7 +18,7 @@
 
         <!-- Creation of a variable for storing output file name -->
         <xsl:variable name="output_name">
-            <xsl:value-of select="concat($file_name, '-tei.xml')"/>
+            <xsl:value-of select="concat($file_name, '.tei.xml')"/>
         </xsl:variable>
 
         <xsl:result-document href="{$output_name}" exclude-result-prefixes="xi xsi pc">
@@ -58,8 +58,8 @@
                 <sourceDoc>
                     <!-- A <graphic> TEI element is used for tagging attributes of the <Page> node in the PAGE XML -->
                     <graphic>
-                        <xsl:attribute name="url">
-                            <xsl:value-of select="$file_name"/>
+                        <xsl:attribute name="source">
+                            <xsl:value-of select="/pc:PcGts/pc:Page/@imageFilename"/>
                         </xsl:attribute>
                         <xsl:attribute name="width">
                             <xsl:value-of select="concat(//pc:Page/@imageWidth, 'px')"/>
@@ -86,7 +86,7 @@
                         <xsl:value-of select="replace(@custom, ' ', '_')"/>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:value-of>no_value</xsl:value-of>
+                        <xsl:value-of>none</xsl:value-of>
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:attribute>
