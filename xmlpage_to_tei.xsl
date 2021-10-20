@@ -92,6 +92,9 @@
             </xsl:attribute>
             <!-- <surface> in the TEI represents all baselines associated with a <TextRegion> in the PAGE XML -->
             <surface>
+                <xsl:attribute name="points">
+                    <xsl:value-of select="pc:Coords/@points"/>
+                </xsl:attribute>
                 <!-- For each <TextLine> in the PAGE XML, a <zone> element is created in the TEI. -->
                 <xsl:for-each select="pc:TextLine">
                     <!-- <zone> in the TEI represents baseline's mask in the PAGE XML -->
