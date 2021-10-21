@@ -70,6 +70,11 @@
                     </graphic>
                     <xsl:apply-templates select="//pc:Page"/>
                 </sourceDoc>
+                <text>
+                    <body>
+                        <p/>
+                    </body>
+                </text>
             </TEI>
         </xsl:result-document>
         
