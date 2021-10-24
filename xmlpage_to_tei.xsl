@@ -81,7 +81,7 @@
     </xsl:template>
     <!-- A <TextRegion> node in the PAGE XML becomes a <surfaceGrp> node in the TEI -->
     <xsl:template match="//pc:TextRegion">
-        <xsl:element name="surfaceGrp">
+        <xsl:element name="surface">
             <xsl:attribute name="xml:id">
                 <xsl:value-of select="@id"/>
             </xsl:attribute>
@@ -95,11 +95,10 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:attribute>
+            <xsl:attribute name="points">
+                <xsl:value-of select="pc:Coords/@points"/>
+            </xsl:attribute>
             <!-- <surface> in the TEI represents all baselines associated with a <TextRegion> in the PAGE XML -->
-            <surface>
-                <xsl:attribute name="points">
-                    <xsl:value-of select="pc:Coords/@points"/>
-                </xsl:attribute>
                 <!-- For each <TextLine> in the PAGE XML, a <zone> element is created in the TEI. -->
                 <xsl:for-each select="pc:TextLine">
                     <!-- <zone> in the TEI represents baseline's mask in the PAGE XML -->
@@ -124,7 +123,6 @@
                             </xsl:element>
                     </xsl:element>
                 </xsl:for-each>
-            </surface>
         </xsl:element>
     </xsl:template>
 
