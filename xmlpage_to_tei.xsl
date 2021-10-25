@@ -68,7 +68,9 @@
                             <xsl:value-of select="concat(//@imageHeight, 'px')"/>
                         </xsl:attribute>
                     </graphic>
-                    <xsl:apply-templates select="//pc:Page"/>
+                    <surfaceGrp>
+                        <xsl:apply-templates select="//pc:Page"/>
+                    </surfaceGrp>
                 </sourceDoc>
                 <text>
                     <body>
