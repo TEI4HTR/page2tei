@@ -2,7 +2,7 @@
 
 This repository stores an XSLT for transforming a PAGE XML file into XML-TEI, created for the LECTAUREP (INRIA - Archives nationales), and xml files resulting from the transformation. The XSLT was modified from a [first version](https://github.com/inoblivionem/xslt-playground/blob/main/xmlpage_to_tei/xmlpage_to_tei.xsl), created by Manon Ovide ([inoblivionem](https://github.com/inoblivionem/xslt-playground)).
 
-For each annotation region, `<TextRegion>` in a PAGE XML file, a node `<surfaceGrp>` is created in the TEI file.
+For each annotation region, `<TextRegion>` in a PAGE XML file, a node `<surface>` is created in the TEI file.
 
 ## Repository tree
 
