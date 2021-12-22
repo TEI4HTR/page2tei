@@ -7,4 +7,7 @@ authors:
   - family-names: Scheithauer
     given-names: Hugo
     orcid: https://orcid.org/0000-0002-5659-4675
-title: "page2tei - LECTAUREP"
+title: "page2tei, an XSL Transformation to transform PAGE XML into TEI XML"
+date-released: 2021-11-09
+version: 1.0.0
+
