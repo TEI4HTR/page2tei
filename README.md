@@ -13,8 +13,8 @@ For each annotation region, `<TextRegion>` in a PAGE XML file, a `<surface>` ele
 ```
 
 * The XSLT 
-* A directory named `pagexml`, in which there is a PAGE XML resulting from the automatic transcription of a 'répertoire de notaire,' and its image.
-* The directory named `tei` stores two version of the transformation obtained with the XSLT.
+* A directory named `pagexml`, in which are stored PAGE XML files.
+* The directory named `tei` stores the TEI files resulting from the transformed PAGE XML.
 
 ## Cite this repository
 
