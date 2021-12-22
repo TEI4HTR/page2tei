@@ -13,9 +13,11 @@ For each annotation region, `<TextRegion>` in a PAGE XML file, a `<surface>` ele
 ```
 
 * The XSLT 
-* A directory named `pagexml`, in which there is a PAGE XML resulting from the automatic transcription of a 'répertoire de notaire,' and its image.
-* The directory named `tei` stores a TEI file resulting from the transformation.
+* A directory named `pagexml`, in which are stored PAGE XML files.
+* The directory named `tei` stores the TEI files resulting from the transformed PAGE XML.
 
-## Cite this repository
+## Cite this work
 
-`Chagué, A., & Scheithauer, H. page2tei - LECTAUREP [Computer software]`
+```
+Chagué, A., & Scheithauer, H. (2021). page2tei, an XSL Transformation to transform PAGE XML into TEI XML (Version 1.0.0) [Computer software]
+```
