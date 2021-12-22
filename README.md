@@ -16,6 +16,8 @@ For each annotation region, `<TextRegion>` in a PAGE XML file, a `<surface>` ele
 * A directory named `pagexml`, in which are stored PAGE XML files.
 * The directory named `tei` stores the TEI files resulting from the transformed PAGE XML.
 
-## Cite this repository
+## Cite this work
 
-`Chagué, A., & Scheithauer, H., Page2tei - Lectaurep, 2021, https://github.com/lectaurep/page2tei.
+```
+Chagué, A., & Scheithauer, H. (2021). page2tei, an XSL Transformation to transform PAGE XML into TEI XML (Version 1.0.0) [Computer software]
+```
