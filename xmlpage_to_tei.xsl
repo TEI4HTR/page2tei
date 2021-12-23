@@ -91,7 +91,7 @@
             <xsl:attribute name="type">
                 <xsl:choose>
                     <xsl:when test="@custom">
-                        <xsl:value-of select="replace(@custom, ' ', '_')"/>
+                        <xsl:value-of select="replace(replace(@custom, 'structure \{type:', ''), ';\}', '')"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of>none</xsl:value-of>
