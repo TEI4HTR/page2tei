@@ -25,7 +25,7 @@
       <graphic url="32_c42c1_default.jpg" width="2312px" height="3469px"/>
       <surfaceGrp>
          <surface xml:id="eSc_textblock_dde8b8e9"
-                  type="structure_{type:numbering;}"
+                  type="numbering"
                   points="154,59 154,257 392,257 392,59">
             <zone xml:id="eSc_line_106ba71b"
                   type="mask"
@@ -35,7 +35,7 @@
             </zone>
          </surface>
          <surface xml:id="eSc_textblock_e94aafae"
-                  type="structure_{type:line_group;}"
+                  type="line_group"
                   points="1770,370 1995,420 2093,471 2126,644 2013,690 1872,867 1849,1003 1917,1058 524,1058 567,1014 532,855 451,829 462,393 576,372 633,367 1769,367">
             <zone xml:id="eSc_line_c4880d79"
                   type="mask"
@@ -69,7 +69,7 @@
             </zone>
          </surface>
          <surface xml:id="eSc_textblock_2ed880a5"
-                  type="structure_{type:title;}"
+                  type="title"
                   points="1594,196 1744,265 1668,330 827,351 793,236 868,173">
             <zone xml:id="eSc_line_08a9f120"
                   type="mask"
@@ -79,7 +79,7 @@
             </zone>
          </surface>
          <surface xml:id="eSc_textblock_7034f134"
-                  type="structure_{type:line_group;}"
+                  type="line_group"
                   points="2022,1144 1930,1376 1895,1743 1734,1799 617,1819 680,1757 694,1641 610,1558 462,1546 451,1133 492,1091 1957,1091">
             <zone xml:id="eSc_line_026c9817"
                   type="mask"
@@ -113,7 +113,7 @@
             </zone>
          </surface>
          <surface xml:id="eSc_textblock_b224b7c1"
-                  type="structure_{type:line_group;}"
+                  type="line_group"
                   points="2103,1919 1953,2116 1895,2460 1809,2510 604,2512 604,2493 632,2470 605,2405 578,2370 613,2335 497,2275 462,1792 493,1787 493,1815 2062,1815">
             <zone xml:id="eSc_line_d5612b33"
                   type="mask"
@@ -147,7 +147,7 @@
             </zone>
          </surface>
          <surface xml:id="eSc_textblock_dcf7cc2a"
-                  type="structure_{type:line_group;}"
+                  type="line_group"
                   points="2071,2555 2087,2530 2101,2530 2101,2522 2196,2555 2207,2818 2057,2937 2011,3087 2045,3257 2094,3274 1102,3274 694,3246 659,3052 520,2980 509,2705 439,2656 451,2555 474,2542 604,2542 604,2530 2025,2530">
             <zone xml:id="eSc_line_6ec24953"
                   type="mask"

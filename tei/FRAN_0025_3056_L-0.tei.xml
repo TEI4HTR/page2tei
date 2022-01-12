@@ -25,7 +25,7 @@
       <graphic url="FRAN_0025_3056_L-0.jpg" width="2894px" height="4393px"/>
       <surfaceGrp>
          <surface xml:id="eSc_textblock_afbab800"
-                  type="structure_{type:col_1;}"
+                  type="col_1"
                   points="421,615 421,2236 465,2211 465,2266 421,2269 425,2449 410,4148 362,4213 205,4228 234,615">
             <zone xml:id="eSc_line_86b00a8e"
                   type="mask"
@@ -143,7 +143,7 @@
             </zone>
          </surface>
          <surface xml:id="eSc_textblock_c6e3bb97"
-                  type="structure_{type:col_3;}"
+                  type="col_3"
                   points="934,612 890,4216 772,4228 577,4207 615,615">
             <zone xml:id="eSc_line_c5f75194"
                   type="mask"
@@ -183,7 +183,7 @@
             </zone>
          </surface>
          <surface xml:id="eSc_textblock_9f233600"
-                  type="structure_{type:col_5;}"
+                  type="col_5"
                   points="2469,633 2439,4125 2436,4254 1228,4225 1274,729 1272,615">
             <zone xml:id="eSc_line_19f939fa"
                   type="mask"
@@ -516,7 +516,7 @@
             </zone>
          </surface>
          <surface xml:id="eSc_textblock_9b0fbd03"
-                  type="structure_{type:col_7;}"
+                  type="col_7"
                   points="2850,628 2820,4067 2817,4257 2566,4269 2603,626">
             <zone xml:id="eSc_line_f3152e4c"
                   type="mask"
@@ -634,7 +634,7 @@
             </zone>
          </surface>
          <surface xml:id="eSc_textblock_d5c8f562"
-                  type="structure_{type:header;}"
+                  type="header"
                   points="351,234 2864,248 2850,611 322,582 236,583 222,323 234,228">
             <zone xml:id="eSc_line_f4ffed34"
                   type="mask"
@@ -740,7 +740,7 @@
             </zone>
          </surface>
          <surface xml:id="eSc_textblock_19204a15"
-                  type="structure_{type:col_4;}"
+                  type="col_4"
                   points="1271,620 1233,4234 908,4213 937,790 931,626 1025,615">
             <zone xml:id="eSc_line_324abde1"
                   type="mask"
@@ -834,7 +834,7 @@
             </zone>
          </surface>
          <surface xml:id="eSc_textblock_17c0e2a5"
-                  type="structure_{type:col_6;}"
+                  type="col_6"
                   points="2590,639 2586,761 2571,3349 2554,4263 2446,4266 2483,633">
             <zone xml:id="eSc_line_15d75a90"
                   type="mask"
@@ -952,7 +952,7 @@
             </zone>
          </surface>
          <surface xml:id="eSc_textblock_8d1cb2dc"
-                  type="structure_{type:col_2;}"
+                  type="col_2"
                   points="601,1463 567,4081 568,4216 412,4226 424,3205 445,601 611,624">
             <zone xml:id="eSc_line_de341a6c"
                   type="mask"
