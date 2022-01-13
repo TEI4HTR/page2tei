@@ -22,7 +22,7 @@
       </revisionDesc>
    </teiHeader>
    <sourceDoc>
-      <graphic url="32_c42c1_default.jpg" width="2312px" height="3469px"/>
+      <graphic url="ark:/12148/btv1b525056707/f33/" width="2312px" height="3469px"/>
       <surfaceGrp>
          <surface xml:id="eSc_textblock_dde8b8e9"
                   type="numbering"
@@ -184,7 +184,48 @@
    </sourceDoc>
    <text>
       <body>
-         <p/>
-      </body>
+            <div>
+                <note type="foliation" place="top">1</note>
+                <head rend="align(center) underline">Le Pont Mirabeau.</head>
+                <lg>
+                    <lg>
+                        <l>Sous le pont Mirabeau coule la Seine.</l>
+                        <l>Et nos amours, faut-il qu'il m'en souvienne ?</l>
+                        <l>La joie venait toujours après la peine.</l>
+                    </lg>
+                    <lg>
+                        <l rend="indent">Vienne la nuit, sonne l'heure,</l>
+                        <l rend="indent">Les jours s'en vont, je demeure.</l>
+                    </lg>
+                    <lg>
+                        <l>Les mains dans les mains, restons face à face</l>
+                        <l>Tandis que sous le pont de nos bras passe</l>
+                        <l>Des éternels regards l'ombre si lasse.</l>
+                    </lg>
+                    <lg>
+                        <l rend="indent">Vienne la nuit, sonne l'heure</l>
+                        <l rend="indent">Les jours s'en vont, je demeure.</l>
+                    </lg>
+                    <lg>
+                        <l>L'amour s'en va comme cette eau courante</l>
+                        <l>L'amour s'en va, comme la vie est lente</l>
+                        <l>Et comme l'Esperance est violente !</l>
+                    </lg>
+                    <lg>
+                        <l rend="indent">Vienne la nuit, sonne l'heure</l>
+                        <l rend="indent">Les jours s'en vont, je demeure</l>
+                    </lg>
+                    <lg>
+                        <l>Passent les jours et passent les semaines</l>
+                        <l>Ni temps passé, ni les amours reviennent ;</l>
+                        <l>Sous le pont Mirabeau coule la Seine</l>
+                    </lg>
+                    <lg>
+                        <l rend="indent">Vienne la nuit, sonne l'heure</l>
+                        <l rend="indent">Les jours s'en vont, je demeure.</l>
+                    </lg>
+                </lg>
+            </div>
+        </body>
    </text>
 </TEI>
