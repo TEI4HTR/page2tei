@@ -69,12 +69,24 @@
                         </xsl:attribute>
                     </graphic>
                     <surfaceGrp>
-                        <xsl:apply-templates select="//pc:Page"/>
+                        <xsl:apply-templates select="//pc:Page" mode="surface"/>
                     </surfaceGrp>
                 </sourceDoc>
                 <text>
                     <body>
-                        <p/>
+                        <div type="transcription">
+                            <pb>
+                                <xsl:attribute name="facs">
+                                    <xsl:value-of select="/pc:PcGts/pc:Page/@imageFilename"/>
+                                </xsl:attribute>
+                            </pb>
+                            <!-- Options for choosing the transformation needed for the body according to the type of files -->
+                            <!-- If you don't want content in the body, it is possible to leave everything in comments -->
+                            
+                            <!--<table><xsl:apply-templates select="//pc:Page" mode="table"/></table>-->
+                            <!--<xsl:apply-templates select="//pc:Page" mode="poem"/>-->
+                            <!--<xsl:apply-templates select="//pc:Page" mode="standard"/>-->
+                        </div>
                     </body>
                 </text>
             </TEI>
@@ -83,7 +95,7 @@
     </xsl:template>
     <!-- A <TextRegion> node in the PAGE XML becomes a <surface> element in the TEI -->
     <!-- <surface> in the TEI represents all baselines associated with a <TextRegion> in the PAGE XML -->
-    <xsl:template match="//pc:TextRegion">
+    <xsl:template match="//pc:TextRegion" mode="surface">
         <xsl:element name="surface">
             <xsl:attribute name="xml:id">
                 <xsl:value-of select="@id"/>
@@ -129,6 +141,39 @@
                     </xsl:element>
                 </xsl:element>
             </xsl:for-each>
+        </xsl:element>
+    </xsl:template>
+    
+    <!-- Templates to display the text in the body according to the kind of files -->
+    <xsl:template match="//pc:TextRegion" mode="table">
+        <xsl:element name="row">
+            <xsl:for-each select="pc:TextLine">
+                <xsl:element name="cell">
+                    <xsl:value-of select="pc:TextEquiv/pc:Unicode"/>
+                </xsl:element>
+            </xsl:for-each>
+        </xsl:element>
+    </xsl:template>
+    
+    <xsl:template match="//pc:TextRegion" mode="poem">
+        <xsl:element name="lg">
+            <xsl:for-each select="pc:TextLine">
+                <xsl:element name="l">
+                    <xsl:value-of select="pc:TextEquiv/pc:Unicode"/>
+                </xsl:element>
+            </xsl:for-each>
+        </xsl:element>
+    </xsl:template>
+    
+    <xsl:template match="//pc:TextRegion" mode="standard">
+        <xsl:element name="div">
+            <xsl:element name="p">
+                <xsl:for-each select="pc:TextLine">
+                    <xsl:value-of select="pc:TextEquiv/pc:Unicode"/>
+                    <xsl:element name="lb"/>
+                    <xsl:text> </xsl:text>
+                </xsl:for-each>
+            </xsl:element>
         </xsl:element>
     </xsl:template>
     
