@@ -22,8 +22,8 @@
       </revisionDesc>
    </teiHeader>
    <sourceDoc>
-      <graphic url="32_c42c1_default.jpg" width="2312px" height="3469px"/>
-      <surfaceGrp>
+      <graphic xml:id="f33" url="32_c42c1_default.jpg" width="2312px" height="3469px"/>
+      <surfaceGrp facs="#f33">
          <surface xml:id="eSc_textblock_dde8b8e9"
                   type="numbering"
                   points="154,59 154,257 392,257 392,59">
