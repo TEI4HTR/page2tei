@@ -61,6 +61,9 @@
                         <xsl:attribute name="xml:id">
                             <xsl:value-of select="/pc:PcGts/pc:Page/@imageFilename"/>
                         </xsl:attribute>
+                        <xsl:attribute name="url">
+                            <xsl:value-of select="replace($file_name, '.jpg', '')"/>
+                        </xsl:attribute>
                         <xsl:attribute name="width">
                             <xsl:value-of select="concat(//pc:Page/@imageWidth, 'px')"/>
                         </xsl:attribute>
