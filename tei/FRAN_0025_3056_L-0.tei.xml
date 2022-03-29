@@ -22,8 +22,8 @@
       </revisionDesc>
    </teiHeader>
    <sourceDoc>
-      <graphic url="FRAN_0025_3056_L-0.jpg" width="2894px" height="4393px"/>
-      <surfaceGrp>
+      <graphic xml:id="FRAN_0025_3056_L-0.jpg" width="2894px" height="4393px"/>
+      <surfaceGrp facs="#FRAN_0025_3056_L-0">
          <surface xml:id="eSc_textblock_afbab800"
                   type="col_1"
                   points="421,615 421,2236 465,2211 465,2266 421,2269 425,2449 410,4148 362,4213 205,4228 234,615">
