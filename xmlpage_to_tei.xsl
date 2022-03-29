@@ -59,10 +59,10 @@
                     <!-- A <graphic> TEI element is used for tagging attributes of the <Page> node in the PAGE XML -->
                     <graphic>
                         <xsl:attribute name="xml:id">
-                            <xsl:value-of select="/pc:PcGts/pc:Page/@imageFilename"/>
+                            <xsl:value-of select="$file_name"/>
                         </xsl:attribute>
                         <xsl:attribute name="url">
-                            <xsl:value-of select="replace($file_name, '.jpg', '')"/>
+                            <xsl:value-of select="$file_name"/>
                         </xsl:attribute>
                         <xsl:attribute name="width">
                             <xsl:value-of select="concat(//pc:Page/@imageWidth, 'px')"/>
