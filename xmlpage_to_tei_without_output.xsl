@@ -15,11 +15,7 @@
         <xsl:variable name="file_name">
             <xsl:value-of select="replace(/pc:PcGts/pc:Page/@imageFilename, '.jpg', '')"/>
         </xsl:variable>
-        
-        <!-- Creation of a variable for storing output file name -->
-        <xsl:variable name="output_name">
-            <xsl:value-of select="concat($file_name, '.tei.xml')"/>
-        </xsl:variable>
+    
         
         <!-- teiHeader elements -->
             <TEI>
